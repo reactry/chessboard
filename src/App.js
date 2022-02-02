@@ -1,12 +1,23 @@
 import './App.css';
 
+import React from 'react';
+
 import InputComponent from './InputComponent';
 import OutputComponent from './OutputComponent';
 
+import settings from './settings.json';
+
 
 function App () {
-	let {...inputProps} = {};
-	let {...outputProps} = {};
+	const resolutions = settings.resolutions;
+
+	let [resolutionIndex, setResolutionIndex] = React.useState(3);
+	let inputProps = {
+		resolutions, resolutionIndex, setResolutionIndex
+	};
+	let outputProps = {
+		resolutions, resolutionIndex
+	};
 
 	return (
 		<div className="App">
