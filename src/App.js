@@ -22,7 +22,7 @@ function App () {
 	return (
 		<div className="App">
 			<main className="flex min-h-screen">
-				<div className="bg-slate-200 w-1/3 overflow-hidden">
+				<div className="bg-slate-200 w-2/3 overflow-hidden">
 					<OutputComponent {...outputProps} />
 				</div>
 				<div className="bg-purple-200 p-4 grow border-l-2 border-purple-800">
