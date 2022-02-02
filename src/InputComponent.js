@@ -1,4 +1,5 @@
 import ColorPicker from './ColorPicker';
+import NumberPicker from './NumberPicker';
 
 import domtoimage from 'dom-to-image';
 const FileSaver = require('file-saver');
@@ -6,6 +7,8 @@ const FileSaver = require('file-saver');
 
 
 export default function InputComponent ({
+	borders, borderIndex, setBorderIndex,
+	sizes, sizeIndex, setSizeIndex,
 	resolutions, resolutionIndex, setResolutionIndex,
 	colors, backgroundColorIndex, setBackgroundColorIndex,
 	primaryColorIndex, setPrimaryColorIndex,
@@ -55,6 +58,15 @@ export default function InputComponent ({
 				colors={colors}
 				index={secondaryColorIndex}
 				setIndex={setSecondaryColorIndex} />
+
+			<NumberPicker title="Square size"
+				numbers={sizes}
+				index={sizeIndex}
+				setIndex={setSizeIndex} />
+			<NumberPicker title="Border size"
+				numbers={borders}
+				index={borderIndex}
+				setIndex={setBorderIndex} />
 
 			<div className="py-4">
 				<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={downloadPng}>Download</button>
