@@ -1,5 +1,8 @@
 import ColorPicker from './ColorPicker';
 
+import domtoimage from 'dom-to-image';
+const FileSaver = require('file-saver');
+
 
 
 export default function InputComponent ({
@@ -21,13 +24,14 @@ export default function InputComponent ({
 		);
 	});
 
-	let backgroundColorItems = colors.map((v, i) => {
-		let borderClass = (i === backgroundColorIndex) ? "border-4 border-black" : "border-y-4";
-		let classNames = `w-8 h-8 mr-1 cursor-pointer bg-slate-600 ${colors[i]} ${borderClass}`;
-		return (
-			<div className={classNames} key={i} onClick={(e) => setBackgroundColorIndex(i)}></div>
-		);
-	});
+	function downloadPng (e) {
+		const filename = `reactry_${resolution.name}.png`;
+		domtoimage.toBlob(document.getElementById('OutputBox'))
+			.then(function (blob) {
+			FileSaver.saveAs(blob, filename);
+		});
+		console.log("Downloaded: " + filename);
+	}
 
 	return (
 		<div className="InputComponent">
@@ -51,6 +55,10 @@ export default function InputComponent ({
 				colors={colors}
 				index={secondaryColorIndex}
 				setIndex={setSecondaryColorIndex} />
+
+			<div className="py-4">
+				<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={downloadPng}>Download</button>
+			</div>
 		</div>
 	);
 }

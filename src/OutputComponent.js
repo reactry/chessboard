@@ -17,7 +17,7 @@ export default function OutputComponent ({
 
 	return (
 		<div className="OutputComponent">
-			<div className={`bg-slate-500 w-24 h-24 p-12 relative ${resolution.classes}`}>
+			<div className={`bg-slate-500 w-24 h-24 relative ${resolution.classes}`}>
 				<div id="OutputBox" className={`absolute shadow-xl ${backgroundColor}`} style={style}>
 					<div></div>
 				</div>
