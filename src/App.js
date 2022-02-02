@@ -1,13 +1,23 @@
 import './App.css';
 
+import InputComponent from './InputComponent';
+import OutputComponent from './OutputComponent';
+
+
 function App () {
+	let {...inputProps} = {};
+	let {...outputProps} = {};
+
 	return (
 		<div className="App">
-			<header className="bg-rose-600 min-h-screen flex">
-				<div className="m-auto">
-					<h1 className="text-[60px] text-white">Hallo Welt</h1>
+			<main className="flex min-h-screen">
+				<div className="bg-slate-200 p-4 w-1/3">
+					<OutputComponent {...outputProps} />
 				</div>
-			</header>
+				<div className="bg-purple-200 p-4 grow border-l-2 border-purple-800">
+					<InputComponent {...inputProps} />
+				</div>
+			</main>
 		</div>
 	);
 }
