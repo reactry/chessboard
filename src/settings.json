@@ -1,8 +1,8 @@
 {
 	"resolutions": [
-		{"name": "HD", "width": 1280, "height": 720},
-		{"name": "FHD", "width": 1920, "height": 1080},
-		{"name": "QHD", "width": 2560, "height": 1440},
-		{"name": "UHD", "width": 3840, "height": 2160}
+		{"name": "HD", "width": 1280, "height": 720, "classes": "scale-[0.3]"},
+		{"name": "FHD", "width": 1920, "height": 1080, "classes": "scale-[0.2]"},
+		{"name": "QHD", "width": 2560, "height": 1440, "classes": "scale-[0.15]"},
+		{"name": "UHD", "width": 3840, "height": 2160, "classes": "scale-[0.1]"}
 	]
 }
