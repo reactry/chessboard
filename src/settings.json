@@ -1,4 +1,12 @@
 {
+	"colors": [
+		"bg-red-400",
+		"bg-blue-400",
+		"bg-green-400",
+		"bg-black",
+		"bg-white"
+	],
+
 	"resolutions": [
 		{"name": "HD", "width": 1280, "height": 720, "classes": "scale-[0.6]"},
 		{"name": "FHD", "width": 1920, "height": 1080, "classes": "scale-[0.4]"},
