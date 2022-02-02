@@ -13,11 +13,11 @@ function App () {
 	const sizes = settings.sizes;
 
 	let [borderIndex, setBorderIndex] = React.useState(0);
-	let [sizeIndex, setSizeIndex] = React.useState(0);
+	let [sizeIndex, setSizeIndex] = React.useState(11);
 
 	let [backgroundColorIndex, setBackgroundColorIndex] = React.useState(0);
-	let [primaryColorIndex, setPrimaryColorIndex] = React.useState(3);
-	let [secondaryColorIndex, setSecondaryColorIndex] = React.useState(4);
+	let [primaryColorIndex, setPrimaryColorIndex] = React.useState(2);
+	let [secondaryColorIndex, setSecondaryColorIndex] = React.useState(3);
 
 	let [resolutionIndex, setResolutionIndex] = React.useState(3);
 	let inputProps = {
@@ -29,6 +29,8 @@ function App () {
 		secondaryColorIndex, setSecondaryColorIndex
 	};
 	let outputProps = {
+		borders, borderIndex,
+		sizes, sizeIndex,
 		resolutions, resolutionIndex,
 		colors, backgroundColorIndex, primaryColorIndex, secondaryColorIndex
 	};
