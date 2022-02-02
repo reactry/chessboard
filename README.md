@@ -1,4 +1,4 @@
 
-# Reactry's `chessboard-wallpaper`
+# Reactry's `chessboard`
 
 
