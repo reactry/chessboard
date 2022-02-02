@@ -43,6 +43,14 @@ export default function InputComponent ({
 				colors={colors}
 				index={backgroundColorIndex}
 				setIndex={setBackgroundColorIndex} />
+			<ColorPicker title="Primary color"
+				colors={colors}
+				index={primaryColorIndex}
+				setIndex={setPrimaryColorIndex} />
+			<ColorPicker title="Secondary color"
+				colors={colors}
+				index={secondaryColorIndex}
+				setIndex={setSecondaryColorIndex} />
 		</div>
 	);
 }

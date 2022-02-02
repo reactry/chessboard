@@ -14,9 +14,9 @@ export default function ColorPicker ({
 	});
 
 	return (
-		<div className="ColorPicker">
-			<h2>{title}</h2>
-			<div className="flex py-2">
+		<div className="ColorPicker mb-4">
+			<h2 className="text-sm font-bold mb-1">{title}</h2>
+			<div className="flex">
 				{colorItems}
 			</div>
 		</div>
