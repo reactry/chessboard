@@ -1,3 +1,4 @@
+import ColorPicker from './ColorPicker';
 
 
 
@@ -38,12 +39,10 @@ export default function InputComponent ({
 					<span>{height}</span>
 				</div>
 			</div>
-			<div>
-				<h2>Background color</h2>
-				<div className="flex py-2">
-					{backgroundColorItems}
-				</div>
-			</div>
+			<ColorPicker title="Background color"
+				colors={colors}
+				index={backgroundColorIndex}
+				setIndex={setBackgroundColorIndex} />
 		</div>
 	);
 }
