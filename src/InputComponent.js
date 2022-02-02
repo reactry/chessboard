@@ -2,7 +2,10 @@
 
 
 export default function InputComponent ({
-	resolutions, resolutionIndex, setResolutionIndex
+	resolutions, resolutionIndex, setResolutionIndex,
+	colors, backgroundColorIndex, setBackgroundColorIndex,
+	primaryColorIndex, setPrimaryColorIndex,
+	secondaryColorIndex, setSecondaryColorIndex
 }) {
 
 	let resolution = resolutions[resolutionIndex];
@@ -17,6 +20,14 @@ export default function InputComponent ({
 		);
 	});
 
+	let backgroundColorItems = colors.map((v, i) => {
+		let borderClass = (i === backgroundColorIndex) ? "border-4 border-black" : "border-y-4";
+		let classNames = `w-8 h-8 mr-1 cursor-pointer bg-slate-600 ${colors[i]} ${borderClass}`;
+		return (
+			<div className={classNames} key={i} onClick={(e) => setBackgroundColorIndex(i)}></div>
+		);
+	});
+
 	return (
 		<div className="InputComponent">
 			<div className="flex py-2 text-white font-bold text-sm">
@@ -25,6 +36,12 @@ export default function InputComponent ({
 					<span>{width}</span>
 					<span className="px-1">x</span>
 					<span>{height}</span>
+				</div>
+			</div>
+			<div>
+				<h2>Background color</h2>
+				<div className="flex py-2">
+					{backgroundColorItems}
 				</div>
 			</div>
 		</div>

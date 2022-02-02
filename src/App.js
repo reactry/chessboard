@@ -10,13 +10,22 @@ import settings from './settings.json';
 
 function App () {
 	const resolutions = settings.resolutions;
+	const colors = settings.colors;
+
+	let [backgroundColorIndex, setBackgroundColorIndex] = React.useState(0);
+	let [primaryColorIndex, setPrimaryColorIndex] = React.useState(3);
+	let [secondaryColorIndex, setSecondaryColorIndex] = React.useState(4);
 
 	let [resolutionIndex, setResolutionIndex] = React.useState(3);
 	let inputProps = {
-		resolutions, resolutionIndex, setResolutionIndex
+		resolutions, resolutionIndex, setResolutionIndex,
+		colors, backgroundColorIndex, setBackgroundColorIndex,
+		primaryColorIndex, setPrimaryColorIndex,
+		secondaryColorIndex, setSecondaryColorIndex
 	};
 	let outputProps = {
-		resolutions, resolutionIndex
+		resolutions, resolutionIndex,
+		colors, backgroundColorIndex, primaryColorIndex, secondaryColorIndex
 	};
 
 	return (
