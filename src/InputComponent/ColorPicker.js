@@ -9,7 +9,7 @@ export default function ColorPicker ({
 
 	let colorItems = colors.map((v, i) => {
 		let borderClass = (i === index) ? "border-4 border-black" : "border-y-4";
-		let classNames = `w-8 h-8 mr-1 cursor-pointer bg-slate-600 ${colors[i]} ${borderClass}`;
+		let classNames = `w-8 h-8 mr-1 cursor-pointer ${colors[i]} ${borderClass}`;
 		return (
 			<div className={classNames} key={i} onClick={(e) => setIndex(i)}></div>
 		);
