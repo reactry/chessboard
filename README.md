@@ -3,7 +3,7 @@
 Reactry's `chessboard` is wallpaper generator written in `React`.
 
 ## `1.1.0` - `future`
-* added new colors `pink`, `indogo` and `cyan`
+* added new colors `pink`, `indogo` and `lime`
 
 <img src="https://raw.githubusercontent.com/reactry/chessboard/master/img/1.0.0.png">
 
