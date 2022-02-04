@@ -1,6 +1,9 @@
 import ColorPicker from './ColorPicker';
 import NumberPicker from './NumberPicker';
+import ShowToggle from './ShowToggle';
+import DebugTable from './DebugTable';
 
+import React from 'react';
 import domtoimage from 'dom-to-image';
 const FileSaver = require('file-saver');
 
@@ -14,6 +17,8 @@ export default function InputComponent ({
 	primaryColorIndex, setPrimaryColorIndex,
 	secondaryColorIndex, setSecondaryColorIndex
 }) {
+
+	let [showDebugTable, setShowDebugTable] = React.useState(true);
 
 	let resolution = resolutions[resolutionIndex];
 	let width = resolution.width;
@@ -35,6 +40,21 @@ export default function InputComponent ({
 		});
 		console.log("Downloaded: " + filename);
 	}
+
+	let debugTableToggleProps = {
+		show: showDebugTable,
+		setShow: setShowDebugTable,
+		title: "Debug Info"
+	};
+
+	let debugTableProps = {
+		borderIndex,
+		sizeIndex,
+		resolutionIndex,
+		backgroundColorIndex,
+		primaryColorIndex,
+		secondaryColorIndex
+	};
 
 	return (
 		<div className="InputComponent">
@@ -71,6 +91,8 @@ export default function InputComponent ({
 			<div className="py-4">
 				<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={downloadPng}>Download</button>
 			</div>
+			<ShowToggle {...debugTableToggleProps} />
+			{showDebugTable && <DebugTable {...debugTableProps} />}
 		</div>
 	);
 }
