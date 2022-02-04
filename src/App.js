@@ -16,7 +16,7 @@ function App () {
 	let [sizeIndex, setSizeIndex] = React.useState(11);
 
 	let [backgroundColorIndex, setBackgroundColorIndex] = React.useState(2);
-	let [primaryColorIndex, setPrimaryColorIndex] = React.useState(0);
+	let [primaryColorIndex, setPrimaryColorIndex] = React.useState(1);
 	let [secondaryColorIndex, setSecondaryColorIndex] = React.useState(2);
 
 	let [resolutionIndex, setResolutionIndex] = React.useState(3);
@@ -37,11 +37,11 @@ function App () {
 
 	return (
 		<div className="App">
-			<main className="flex min-h-screen">
-				<div className="bg-slate-200 w-2/3 overflow-hidden">
+			<main className="md:flex md:min-h-screen">
+				<div className="bg-slate-200 md:w-2/3 h-48 md:h-auto overflow-hidden">
 					<OutputComponent {...outputProps} />
 				</div>
-				<div className="bg-purple-200 p-4 grow border-l-2 border-purple-800 overflow-hidden">
+				<div className="bg-purple-200 p-4 grow border-t-2 md:border-t-0 md:border-l-2 border-purple-800 overflow-hidden">
 					<InputComponent {...inputProps} />
 				</div>
 			</main>
