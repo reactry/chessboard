@@ -2,6 +2,11 @@
 # Reactry's `chessboard`
 Reactry's `chessboard` is wallpaper generator written in `React`.
 
+## `goals`
+* ablity to select a custom color
+* a button to randomize all options
+* display all state variables for help in debugging
+
 ## `1.1.0` - `future`
 * added new colors `pink`, `indogo` and `lime`
 * added button to choose a random color
