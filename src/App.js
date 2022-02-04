@@ -15,9 +15,9 @@ function App () {
 	let [borderIndex, setBorderIndex] = React.useState(0);
 	let [sizeIndex, setSizeIndex] = React.useState(11);
 
-	let [backgroundColorIndex, setBackgroundColorIndex] = React.useState(0);
-	let [primaryColorIndex, setPrimaryColorIndex] = React.useState(2);
-	let [secondaryColorIndex, setSecondaryColorIndex] = React.useState(3);
+	let [backgroundColorIndex, setBackgroundColorIndex] = React.useState(2);
+	let [primaryColorIndex, setPrimaryColorIndex] = React.useState(0);
+	let [secondaryColorIndex, setSecondaryColorIndex] = React.useState(2);
 
 	let [resolutionIndex, setResolutionIndex] = React.useState(3);
 	let inputProps = {
