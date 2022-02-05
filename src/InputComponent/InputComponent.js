@@ -1,6 +1,7 @@
 import TopTabBar from './TopTabBar';
 import ColorTab from './ColorTab';
 import SizeTab from './SizeTab';
+import TextTab from './TextTab';
 import DebugTab from './DebugTab';
 import Links from './Links';
 
@@ -14,6 +15,9 @@ const tabs = [
 	},
 	{
 		"title": "Size"
+	},
+	{
+		"title": "Text"
 	},
 	{
 		"title": "Debug",
@@ -71,6 +75,8 @@ export default function InputComponent ({
 		resolutions, resolutionIndex, setResolutionIndex
 	};
 
+	let textTabProps = {};
+
 	let debugTabProps = {
 		selectSquare, borderIndex,
 		widthIndex, heightIndex, resolutionIndex, paddingIndex, radiusIndex,
@@ -83,6 +89,8 @@ export default function InputComponent ({
 			return <ColorTab {...colorTabProps} />;
 		} else if (currentTabName === "Size") {
 			return <SizeTab {...sizeTabProps} />
+		} else if (currentTabName === "Text") {
+			return <TextTab {...textTabProps} />
 		} else if (currentTabName === "Debug") {
 			return <DebugTab {...debugTabProps} />
 		}
