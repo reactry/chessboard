@@ -1,8 +1,9 @@
-import ColorPicker from './ColorPicker';
 import NumberPicker from './NumberPicker';
 import ShowToggle from './ShowToggle';
 import DebugTable from './DebugTable';
+
 import TopTabBar from './TopTabBar';
+import ColorTab from './ColorTab';
 
 import React from 'react';
 import domtoimage from 'dom-to-image';
@@ -107,6 +108,12 @@ export default function InputComponent ({
 		}
 	}
 
+	let colorTabProps = {
+		colors, backgroundColorIndex, setBackgroundColorIndex,
+		primaryColorIndex, setPrimaryColorIndex,
+		secondaryColorIndex, setSecondaryColorIndex
+	};
+
 	return (
 		<div className="InputComponent">
 			<TopTabBar {...topTabBarProps} />
@@ -119,18 +126,7 @@ export default function InputComponent ({
 				</div>
 			</div>
 			<div className="p-4">
-				<ColorPicker title="Background color"
-					colors={colors}
-					index={backgroundColorIndex}
-					setIndex={setBackgroundColorIndex} />
-				<ColorPicker title="Primary color"
-					colors={colors}
-					index={primaryColorIndex}
-					setIndex={setPrimaryColorIndex} />
-				<ColorPicker title="Secondary color"
-					colors={colors}
-					index={secondaryColorIndex}
-					setIndex={setSecondaryColorIndex} />
+				<ColorTab {...colorTabProps} />
 
 				<ShowToggle {...selectShapeProps} />
 				{shapeSelector()}
