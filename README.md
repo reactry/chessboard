@@ -9,9 +9,8 @@ Reactry's `chessboard` is wallpaper generator written in `React`.
 ## `1.3.0` - `future`
 * nothing yet
 
-<img src="https://raw.githubusercontent.com/reactry/chessboard/master/img/1.2.0.png">
-
 ## `1.2.0` - `2022-02-05`
+<img src="https://raw.githubusercontent.com/reactry/chessboard/master/img/1.2.0.png">
 * ability to render rectangles - replaced `sizeIndex` with `widthIndex` and `heightIndex`
 * removed odd sizes
 * now user can switch `colors` by pressing `left` and `right` keys
@@ -26,9 +25,8 @@ Reactry's `chessboard` is wallpaper generator written in `React`.
 * added a `DebugTable` for viewing state while debugging
 * moved `Input` and `Output` components to separate dirs
 
-<img src="https://raw.githubusercontent.com/reactry/chessboard/master/img/1.0.0.png">
-
 ## `1.0.0` - `2022-02-02`
+<img src="https://raw.githubusercontent.com/reactry/chessboard/master/img/1.0.0.png">
 * 4 `resolutions`, 5 `colors` and 10+ `sizes`
 * `wallpaper` can be downloaded as `PNG`
 * deleting from disk for now
