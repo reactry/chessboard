@@ -11,10 +11,12 @@ function App () {
 	const colors = settings.colors;
 	const resolutions = settings.resolutions;
 	const sizes = settings.sizes;
+	const paddings = settings.paddings;
 	const radiuses = settings.radiuses;
 
 	let [selectSquare, setSelectSquare] = React.useState(true);
 	let [borderIndex, setBorderIndex] = React.useState(0);
+	let [paddingIndex, setPaddingIndex] = React.useState(0);
 	let [widthIndex, setWidthIndex] = React.useState(8);
 	let [heightIndex, setHeightIndex] = React.useState(8);
 	let [radiusIndex, setRadiusIndex] = React.useState(0);
@@ -30,6 +32,7 @@ function App () {
 		sizes,
 		widthIndex, setWidthIndex,
 		heightIndex, setHeightIndex,
+		paddings, paddingIndex, setPaddingIndex,
 		radiuses, radiusIndex, setRadiusIndex,
 		resolutions, resolutionIndex, setResolutionIndex,
 		colors, backgroundColorIndex, setBackgroundColorIndex,
@@ -39,6 +42,7 @@ function App () {
 	let outputProps = {
 		borders, borderIndex,
 		sizes, widthIndex, heightIndex,
+		paddings, paddingIndex,
 		radiuses, radiusIndex,
 		resolutions, resolutionIndex,
 		colors, backgroundColorIndex, primaryColorIndex, secondaryColorIndex

@@ -10,6 +10,7 @@ export default function SizeTab ({
 	sizes,
 	widthIndex, setWidthIndex,
 	heightIndex, setHeightIndex,
+	paddings, paddingIndex, setPaddingIndex,
 	radiuses, radiusIndex, setRadiusIndex,
 	resolutions, resolutionIndex, setResolutionIndex
 }) {
@@ -27,8 +28,8 @@ export default function SizeTab ({
 		let borderClass = (i === resolutionIndex) ? "bg-slate-800 text-white" : "text-black cursor-pointer";
 		let classNames = `px-3 py-1 text-sm border-2 border-slate-800 duration-300 ${borderClass}`;
 		return (
-			<div>
-				<div className={classNames} key={i} onClick={(e) => setResolutionIndex(i)}>{v.name}</div>
+			<div key={i}>
+				<div className={classNames} onClick={(e) => setResolutionIndex(i)}>{v.name}</div>
 			</div>
 		);
 	});
@@ -90,6 +91,10 @@ export default function SizeTab ({
 				<ShowToggle {...selectShapeProps} />
 			</div>
 			{shapeSelector()}
+			<NumberPicker title="Padding"
+				numbers={paddings}
+				index={paddingIndex}
+				setIndex={setPaddingIndex} />
 			<NumberPicker title="Border"
 				numbers={borders}
 				index={borderIndex}

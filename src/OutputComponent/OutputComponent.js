@@ -5,6 +5,7 @@ import Row from './Row';
 export default function OutputComponent ({
 	borders, borderIndex,
 	sizes, widthIndex, heightIndex,
+	paddings, paddingIndex,
 	radiuses, radiusIndex,
 	resolutions, resolutionIndex,
 	colors, backgroundColorIndex, primaryColorIndex, secondaryColorIndex
@@ -29,7 +30,12 @@ export default function OutputComponent ({
 
 	let arr = [...Array(ny).keys()].map(i => i+1);
 	let rowItems = arr.map((v, rowIndex) => {
-		let args = {rowIndex, nx, size_x, size_y, primaryColor, secondaryColor, radiuses, radiusIndex};
+		let args = {
+			rowIndex, nx, size_x, size_y,
+			primaryColor, secondaryColor,
+			paddings, paddingIndex,
+			radiuses, radiusIndex
+		};
 		return <Row key={rowIndex} {...args} />;
 	});
 

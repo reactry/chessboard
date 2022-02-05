@@ -4,6 +4,7 @@ import Square from './Square';
 export default function Row ({
 	rowIndex, nx, size_x, size_y,
 	primaryColor, secondaryColor,
+	paddings, paddingIndex,
 	radiuses, radiusIndex
 }) {
 
@@ -16,6 +17,7 @@ export default function Row ({
 			width: size_x,
 			height: size_y,
 			bg: bg,
+			padding: paddings[paddingIndex],
 			radius: radiuses[radiusIndex].class
 		};
 		return <Square key={squareIndex} {...args} />;

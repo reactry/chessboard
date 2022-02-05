@@ -17,6 +17,7 @@ export default function InputComponent ({
 	sizes,
 	widthIndex, setWidthIndex,
 	heightIndex, setHeightIndex,
+	paddings, paddingIndex, setPaddingIndex,
 	radiuses, radiusIndex, setRadiusIndex,
 	resolutions, resolutionIndex, setResolutionIndex,
 	colors, backgroundColorIndex, setBackgroundColorIndex,
@@ -54,6 +55,7 @@ export default function InputComponent ({
 		sizes,
 		widthIndex, setWidthIndex,
 		heightIndex, setHeightIndex,
+		paddings, paddingIndex, setPaddingIndex,
 		radiuses, radiusIndex, setRadiusIndex,
 		resolutions, resolutionIndex, setResolutionIndex
 	};
@@ -61,7 +63,7 @@ export default function InputComponent ({
 	let debugTabProps = {
 		showDebugTable, setShowDebugTable,
 		selectSquare, borderIndex,
-		widthIndex, heightIndex, resolutionIndex,
+		widthIndex, heightIndex, resolutionIndex, paddingIndex, radiusIndex,
 		backgroundColorIndex, primaryColorIndex, secondaryColorIndex
 	};
 

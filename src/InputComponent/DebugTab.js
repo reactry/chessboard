@@ -5,8 +5,8 @@ import ShowToggle from './ShowToggle';
 
 export default function DebugTab ({
 	showDebugTable, setShowDebugTable,
-	selectSquare, borderIndex,
-	widthIndex, heightIndex, resolutionIndex,
+	selectSquare, widthIndex, heightIndex, resolutionIndex,
+	paddingIndex, borderIndex,
 	backgroundColorIndex, primaryColorIndex, secondaryColorIndex
 }) {
 
@@ -19,13 +19,9 @@ export default function DebugTab ({
 
 	let debugTableProps = {
 		selectSquare,
-		borderIndex,
-		widthIndex,
-		heightIndex,
-		resolutionIndex,
-		backgroundColorIndex,
-		primaryColorIndex,
-		secondaryColorIndex
+		widthIndex, heightIndex, resolutionIndex,
+		paddingIndex, borderIndex,
+		backgroundColorIndex, primaryColorIndex, secondaryColorIndex
 	};
 
 	return (
