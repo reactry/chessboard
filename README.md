@@ -11,6 +11,7 @@ Reactry's `chessboard` is wallpaper generator written in `React`.
 * removed odd sizes
 * now user can switch `colors` by pressing `left` and `right` keys
 * now user can switch `sizes` by pressing `left` and `right` keys
+* implemented `Tabs` in `InputComponent`
 
 ## `1.1.0` - `2022-02-04`
 * added new colors `pink`, `indogo` and `lime`

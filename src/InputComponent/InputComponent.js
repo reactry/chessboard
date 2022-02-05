@@ -73,6 +73,17 @@ export default function InputComponent ({
 		backgroundColorIndex, primaryColorIndex, secondaryColorIndex
 	};
 
+	function currentTab () {
+		let currentTabName = tabs[currentTabIndex];
+		if (currentTabName === "Color") {
+			return <ColorTab {...colorTabProps} />;
+		} else if (currentTabName === "Size") {
+			return <SizeTab {...sizeTabProps} />
+		} else if (currentTabName === "Debug") {
+			return <DebugTab {...debugTabProps} />
+		}
+	}
+
 	return (
 		<div className="InputComponent">
 			<TopTabBar {...topTabBarProps} />
@@ -85,9 +96,7 @@ export default function InputComponent ({
 				</div>
 			</div>
 			<div className="p-4">
-				<ColorTab {...colorTabProps} />
-				<SizeTab {...sizeTabProps} />
-				<DebugTab {...debugTabProps} />
+				{currentTab()}
 
 				<div className="py-4">
 					<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={downloadPng}>Download</button>
