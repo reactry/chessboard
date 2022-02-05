@@ -9,6 +9,7 @@ Reactry's `chessboard` is wallpaper generator written in `React`.
 ## `1.3.0` - `future`
 * added option to set `border-radius` of squares
 * added option to set `padding` of squares
+* added repo and twitter links at bottom of `InputComponent`
 
 ## `1.2.0` - `2022-02-05`
 <img src="https://raw.githubusercontent.com/reactry/chessboard/master/img/1.2.0.png">

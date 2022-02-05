@@ -13,6 +13,7 @@ function App () {
 	const sizes = settings.sizes;
 	const paddings = settings.paddings;
 	const radiuses = settings.radiuses;
+	const links = settings.links;
 
 	let [selectSquare, setSelectSquare] = React.useState(true);
 	let [borderIndex, setBorderIndex] = React.useState(0);
@@ -29,7 +30,7 @@ function App () {
 	let inputProps = {
 		selectSquare, setSelectSquare,
 		borders, borderIndex, setBorderIndex,
-		sizes,
+		links, sizes,
 		widthIndex, setWidthIndex,
 		heightIndex, setHeightIndex,
 		paddings, paddingIndex, setPaddingIndex,

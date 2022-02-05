@@ -14,7 +14,7 @@ const tabs = ["Color", "Size", "Debug"];
 export default function InputComponent ({
 	selectSquare, setSelectSquare,
 	borders, borderIndex, setBorderIndex,
-	sizes,
+	links, sizes,
 	widthIndex, setWidthIndex,
 	heightIndex, setHeightIndex,
 	paddings, paddingIndex, setPaddingIndex,
@@ -78,6 +78,10 @@ export default function InputComponent ({
 		}
 	}
 
+	let linkItems = links.map((v, i) => {
+		return <a key={i} target="_blank" href={v.url} className="text-blue-700 px-3 py-2 hover:bg-slate-300 focus:bg-slate-300">{v.title}</a>;
+	});
+
 	return (
 		<div className="InputComponent">
 			<TopTabBar {...topTabBarProps} />
@@ -87,6 +91,9 @@ export default function InputComponent ({
 
 				<div className="px-4 py-4">
 					<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={downloadPng}>Download</button>
+				</div>
+				<div className="px-4 py-4">
+					{linkItems}
 				</div>
 			</div>
 		</div>
