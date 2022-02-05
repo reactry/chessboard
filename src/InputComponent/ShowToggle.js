@@ -17,7 +17,7 @@ export default function ShowToggle ({
 
 	return (
 		<div className="ShowToggle px-2 py-2 flex">
-			<div className="px-2 py-3 cursor-pointer rounded-md outline-none duration-300 hover:bg-gray-200 focus:bg-gray-200"
+			<div className="px-2 py-3 cursor-pointer rounded-md outline-none duration-300 hover:bg-gray-200 focus:bg-gray-200 focus:shadow-lg"
 				onClick={(e) => setShow(!show)} tabIndex="0"
 				onKeyDown={handleKeyPress}>
 				<div className="bg-gray-400 w-12 h-3 rounded-full">
