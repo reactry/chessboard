@@ -14,8 +14,8 @@ function App () {
 
 	let [selectSquare, setSelectSquare] = React.useState(true);
 	let [borderIndex, setBorderIndex] = React.useState(0);
-	let [widthIndex, setWidthIndex] = React.useState(11);
-	let [heightIndex, setHeightIndex] = React.useState(11);
+	let [widthIndex, setWidthIndex] = React.useState(8);
+	let [heightIndex, setHeightIndex] = React.useState(8);
 
 	let [backgroundColorIndex, setBackgroundColorIndex] = React.useState(2);
 	let [primaryColorIndex, setPrimaryColorIndex] = React.useState(1);
