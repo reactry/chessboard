@@ -46,7 +46,7 @@ function App () {
 				<div className="bg-slate-200 md:w-2/3 h-48 md:h-auto overflow-hidden">
 					<OutputComponent {...outputProps} />
 				</div>
-				<div className="bg-purple-200 p-4 grow border-t-2 md:border-t-0 md:border-l-2 border-purple-800 overflow-hidden">
+				<div className="bg-purple-200 grow border-t-2 md:border-t-0 md:border-l-2 border-purple-800 overflow-hidden">
 					<InputComponent {...inputProps} />
 				</div>
 			</main>

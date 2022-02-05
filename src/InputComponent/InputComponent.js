@@ -2,10 +2,13 @@ import ColorPicker from './ColorPicker';
 import NumberPicker from './NumberPicker';
 import ShowToggle from './ShowToggle';
 import DebugTable from './DebugTable';
+import TopTabBar from './TopTabBar';
 
 import React from 'react';
 import domtoimage from 'dom-to-image';
 const FileSaver = require('file-saver');
+
+const tabs = ["Color", "Size", "Debug"];
 
 
 
@@ -20,6 +23,8 @@ export default function InputComponent ({
 	primaryColorIndex, setPrimaryColorIndex,
 	secondaryColorIndex, setSecondaryColorIndex
 }) {
+
+	let [currentTabIndex, setCurrentTabIndex] = React.useState(0);
 
 	let sizeIndex = widthIndex;
 	let setSizeIndex = (x) => {
@@ -48,6 +53,10 @@ export default function InputComponent ({
 		});
 		console.log("Downloaded: " + filename);
 	}
+
+	let topTabBarProps = {
+		tabs, currentTabIndex, setCurrentTabIndex
+	};
 
 	let selectShapeProps = {
 		show: selectSquare,
@@ -100,7 +109,8 @@ export default function InputComponent ({
 
 	return (
 		<div className="InputComponent">
-			<div className="flex py-2 text-white font-bold text-sm">
+			<TopTabBar {...topTabBarProps} />
+			<div className="flex px-4 py-2 text-white font-bold text-sm">
 				{resolutionItems}
 				<div className="px-4 py-2 ml-4 bg-rose-500 inline-block rounded-full">
 					<span>{width}</span>
@@ -108,31 +118,33 @@ export default function InputComponent ({
 					<span>{height}</span>
 				</div>
 			</div>
-			<ColorPicker title="Background color"
-				colors={colors}
-				index={backgroundColorIndex}
-				setIndex={setBackgroundColorIndex} />
-			<ColorPicker title="Primary color"
-				colors={colors}
-				index={primaryColorIndex}
-				setIndex={setPrimaryColorIndex} />
-			<ColorPicker title="Secondary color"
-				colors={colors}
-				index={secondaryColorIndex}
-				setIndex={setSecondaryColorIndex} />
+			<div className="p-4">
+				<ColorPicker title="Background color"
+					colors={colors}
+					index={backgroundColorIndex}
+					setIndex={setBackgroundColorIndex} />
+				<ColorPicker title="Primary color"
+					colors={colors}
+					index={primaryColorIndex}
+					setIndex={setPrimaryColorIndex} />
+				<ColorPicker title="Secondary color"
+					colors={colors}
+					index={secondaryColorIndex}
+					setIndex={setSecondaryColorIndex} />
 
-			<ShowToggle {...selectShapeProps} />
-			{shapeSelector()}
-			<NumberPicker title="Border size"
-				numbers={borders}
-				index={borderIndex}
-				setIndex={setBorderIndex} />
+				<ShowToggle {...selectShapeProps} />
+				{shapeSelector()}
+				<NumberPicker title="Border size"
+					numbers={borders}
+					index={borderIndex}
+					setIndex={setBorderIndex} />
 
-			<div className="py-4">
-				<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={downloadPng}>Download</button>
+				<div className="py-4">
+					<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={downloadPng}>Download</button>
+				</div>
+				<ShowToggle {...debugTableToggleProps} />
+				{showDebugTable && <DebugTable {...debugTableProps} />}
 			</div>
-			<ShowToggle {...debugTableToggleProps} />
-			{showDebugTable && <DebugTable {...debugTableProps} />}
 		</div>
 	);
 }
