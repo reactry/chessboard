@@ -12,8 +12,10 @@ function App () {
 	const resolutions = settings.resolutions;
 	const sizes = settings.sizes;
 
+	let [selectSquare, setSelectSquare] = React.useState(true);
 	let [borderIndex, setBorderIndex] = React.useState(0);
-	let [sizeIndex, setSizeIndex] = React.useState(11);
+	let [widthIndex, setWidthIndex] = React.useState(11);
+	let [heightIndex, setHeightIndex] = React.useState(11);
 
 	let [backgroundColorIndex, setBackgroundColorIndex] = React.useState(2);
 	let [primaryColorIndex, setPrimaryColorIndex] = React.useState(1);
@@ -21,8 +23,11 @@ function App () {
 
 	let [resolutionIndex, setResolutionIndex] = React.useState(3);
 	let inputProps = {
+		selectSquare, setSelectSquare,
 		borders, borderIndex, setBorderIndex,
-		sizes, sizeIndex, setSizeIndex,
+		sizes,
+		widthIndex, setWidthIndex,
+		heightIndex, setHeightIndex,
 		resolutions, resolutionIndex, setResolutionIndex,
 		colors, backgroundColorIndex, setBackgroundColorIndex,
 		primaryColorIndex, setPrimaryColorIndex,
@@ -30,7 +35,7 @@ function App () {
 	};
 	let outputProps = {
 		borders, borderIndex,
-		sizes, sizeIndex,
+		sizes, widthIndex, heightIndex,
 		resolutions, resolutionIndex,
 		colors, backgroundColorIndex, primaryColorIndex, secondaryColorIndex
 	};

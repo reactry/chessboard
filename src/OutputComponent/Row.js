@@ -2,7 +2,7 @@ import Square from './Square';
 
 
 export default function Row ({
-	rowIndex, nx, size, primaryColor, secondaryColor
+	rowIndex, nx, size_x, size_y, primaryColor, secondaryColor
 }) {
 
 	let arr = [...Array(nx).keys()].map(i => i+1);
@@ -11,8 +11,8 @@ export default function Row ({
 		let evenSquare = squareIndex % 2 === 0;
 		let bg = (evenRow ? !evenSquare : evenSquare) ? primaryColor : secondaryColor;
 		let args = {
-			width: size,
-			height: size,
+			width: size_x,
+			height: size_y,
 			bg: bg
 		};
 		return <Square key={squareIndex} {...args} />;

@@ -10,14 +10,22 @@ const FileSaver = require('file-saver');
 
 
 export default function InputComponent ({
+	selectSquare, setSelectSquare,
 	borders, borderIndex, setBorderIndex,
-	sizes, sizeIndex, setSizeIndex,
+	sizes,
+	widthIndex, setWidthIndex,
+	heightIndex, setHeightIndex,
 	resolutions, resolutionIndex, setResolutionIndex,
 	colors, backgroundColorIndex, setBackgroundColorIndex,
 	primaryColorIndex, setPrimaryColorIndex,
 	secondaryColorIndex, setSecondaryColorIndex
 }) {
 
+	let sizeIndex = widthIndex;
+	let setSizeIndex = (x) => {
+		setWidthIndex(x);
+		setHeightIndex(x);
+	};
 	let [showDebugTable, setShowDebugTable] = React.useState(true);
 
 	let resolution = resolutions[resolutionIndex];
@@ -41,6 +49,12 @@ export default function InputComponent ({
 		console.log("Downloaded: " + filename);
 	}
 
+	let selectShapeProps = {
+		show: selectSquare,
+		setShow: setSelectSquare,
+		title: "Square"
+	};
+
 	let debugTableToggleProps = {
 		show: showDebugTable,
 		setShow: setShowDebugTable,
@@ -48,13 +62,41 @@ export default function InputComponent ({
 	};
 
 	let debugTableProps = {
+		selectSquare,
 		borderIndex,
-		sizeIndex,
+		widthIndex,
+		heightIndex,
 		resolutionIndex,
 		backgroundColorIndex,
 		primaryColorIndex,
 		secondaryColorIndex
 	};
+
+	function shapeSelector () {
+		if (selectSquare) {
+			return (
+				<div>
+					<NumberPicker title="Square Width"
+						numbers={sizes}
+						index={sizeIndex}
+						setIndex={setSizeIndex} />
+				</div>
+			);
+		} else {
+			return (
+				<div>
+					<NumberPicker title="Rectangle Width"
+						numbers={sizes}
+						index={widthIndex}
+						setIndex={setWidthIndex} />
+					<NumberPicker title="Rectangle Height"
+						numbers={sizes}
+						index={heightIndex}
+						setIndex={setHeightIndex} />
+				</div>
+			);
+		}
+	}
 
 	return (
 		<div className="InputComponent">
@@ -79,10 +121,8 @@ export default function InputComponent ({
 				index={secondaryColorIndex}
 				setIndex={setSecondaryColorIndex} />
 
-			<NumberPicker title="Square size"
-				numbers={sizes}
-				index={sizeIndex}
-				setIndex={setSizeIndex} />
+			<ShowToggle {...selectShapeProps} />
+			{shapeSelector()}
 			<NumberPicker title="Border size"
 				numbers={borders}
 				index={borderIndex}

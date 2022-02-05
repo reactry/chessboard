@@ -4,7 +4,7 @@ import Row from './Row';
 
 export default function OutputComponent ({
 	borders, borderIndex,
-	sizes, sizeIndex,
+	sizes, widthIndex, heightIndex,
 	resolutions, resolutionIndex,
 	colors, backgroundColorIndex, primaryColorIndex, secondaryColorIndex
 }) {
@@ -21,13 +21,14 @@ export default function OutputComponent ({
 		height: height + "px"
 	};
 
-	let size = sizes[sizeIndex];
-	let nx = Math.ceil(width / size)
-	let ny = Math.ceil(height / size)
+	let size_x = sizes[widthIndex];
+	let nx = Math.ceil(width / size_x);
+	let size_y = sizes[heightIndex];
+	let ny = Math.ceil(height / size_y);
 
 	let arr = [...Array(ny).keys()].map(i => i+1);
 	let rowItems = arr.map((v, rowIndex) => {
-		let args = {rowIndex, nx, size, primaryColor, secondaryColor};
+		let args = {rowIndex, nx, size_x, size_y, primaryColor, secondaryColor};
 		return <Row key={rowIndex} {...args} />;
 	});
 
