@@ -1,9 +1,7 @@
-import ShowToggle from './ShowToggle';
-import DebugTable from './DebugTable';
-
 import TopTabBar from './TopTabBar';
 import ColorTab from './ColorTab';
 import SizeTab from './SizeTab';
+import DebugTab from './DebugTab';
 
 import React from 'react';
 import domtoimage from 'dom-to-image';
@@ -53,23 +51,6 @@ export default function InputComponent ({
 		tabs, currentTabIndex, setCurrentTabIndex
 	};
 
-	let debugTableToggleProps = {
-		show: showDebugTable,
-		setShow: setShowDebugTable,
-		title: "Debug Info"
-	};
-
-	let debugTableProps = {
-		selectSquare,
-		borderIndex,
-		widthIndex,
-		heightIndex,
-		resolutionIndex,
-		backgroundColorIndex,
-		primaryColorIndex,
-		secondaryColorIndex
-	};
-
 	let colorTabProps = {
 		colors, backgroundColorIndex, setBackgroundColorIndex,
 		primaryColorIndex, setPrimaryColorIndex,
@@ -83,6 +64,13 @@ export default function InputComponent ({
 		widthIndex, setWidthIndex,
 		heightIndex, setHeightIndex,
 		resolutions, resolutionIndex, setResolutionIndex
+	};
+
+	let debugTabProps = {
+		showDebugTable, setShowDebugTable,
+		selectSquare, borderIndex,
+		widthIndex, heightIndex, resolutionIndex,
+		backgroundColorIndex, primaryColorIndex, secondaryColorIndex
 	};
 
 	return (
@@ -99,12 +87,11 @@ export default function InputComponent ({
 			<div className="p-4">
 				<ColorTab {...colorTabProps} />
 				<SizeTab {...sizeTabProps} />
+				<DebugTab {...debugTabProps} />
 
 				<div className="py-4">
 					<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={downloadPng}>Download</button>
 				</div>
-				<ShowToggle {...debugTableToggleProps} />
-				{showDebugTable && <DebugTable {...debugTableProps} />}
 			</div>
 		</div>
 	);
