@@ -21,13 +21,29 @@ export default function ColorPicker ({
 
 	let randomizeButton = <span className="text-sm px-2 py-1 ml-2 bg-slate-400 cursor-pointer duration-300 hover:bg-slate-600 hover:text-white" onClick={pickRandomColor}>random</span>;
 
+	function handleKeyDown (e) {
+		let keyCode = e.keyCode;
+		if (keyCode === 32) {
+			e.preventDefault();
+			pickRandomColor();
+		} else if (keyCode === 37) {
+			// left arrow
+			e.preventDefault();
+			if (index > 0) setIndex(index - 1);
+		} else if (keyCode === 39) {
+			// right arrow
+			e.preventDefault();
+			if (index + 1 < maxColors) setIndex(index + 1)
+		}
+	}
+
 	return (
 		<div className="ColorPicker mb-6">
 			<h2 className="font-bold mb-1">
 				<span className="text-sm">{title}</span>
 				{randomizeButton}
 			</h2>
-			<div className="flex">
+			<div className="flex outline-none p-1 border-2 focus:bg-slate-400" tabIndex="0" onKeyDown={handleKeyDown}>
 				{colorItems}
 			</div>
 		</div>
