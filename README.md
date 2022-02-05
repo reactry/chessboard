@@ -8,6 +8,7 @@ Reactry's `chessboard` is wallpaper generator written in `React`.
 
 ## `1.2.0` - `future`
 * ability to render rectangles - replaced `sizeIndex` with `widthIndex` and `heightIndex`
+* removed odd sizes
 
 ## `1.1.0` - `2022-02-04`
 * added new colors `pink`, `indogo` and `lime`
