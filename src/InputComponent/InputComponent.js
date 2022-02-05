@@ -26,7 +26,6 @@ export default function InputComponent ({
 }) {
 
 	let [currentTabIndex, setCurrentTabIndex] = React.useState(0);
-	let [showDebugTable, setShowDebugTable] = React.useState(true);
 
 	let resolution = resolutions[resolutionIndex];
 
@@ -61,7 +60,6 @@ export default function InputComponent ({
 	};
 
 	let debugTabProps = {
-		showDebugTable, setShowDebugTable,
 		selectSquare, borderIndex,
 		widthIndex, heightIndex, resolutionIndex, paddingIndex, radiusIndex,
 		backgroundColorIndex, primaryColorIndex, secondaryColorIndex
