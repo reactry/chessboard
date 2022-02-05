@@ -6,10 +6,12 @@ export default function TopTabBar ({
 }) {
 
 	let tabItems = tabs.map((v, i) => {
+		if (v.hidden) return null;
+
 		let tabClass = "grow px-2 py-3 duration-300 cursor-pointer";
 		tabClass += (i === currentTabIndex) ? " bg-purple-200" : " hover:bg-purple-100";
 		return (
-			<div key={i} className={tabClass} onClick={() => setCurrentTabIndex(i)}>{v}</div>
+			<div key={i} className={tabClass} onClick={() => setCurrentTabIndex(i)}>{v.title}</div>
 		);
 	});
 

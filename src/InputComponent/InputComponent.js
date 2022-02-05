@@ -8,7 +8,18 @@ import React from 'react';
 import domtoimage from 'dom-to-image';
 const FileSaver = require('file-saver');
 
-const tabs = ["Color", "Size", "Debug"];
+const tabs = [
+	{
+		"title": "Color"
+	},
+	{
+		"title": "Size"
+	},
+	{
+		"title": "Debug",
+		"hidden": true
+	}
+];
 
 
 
@@ -67,7 +78,7 @@ export default function InputComponent ({
 	};
 
 	function currentTab () {
-		let currentTabName = tabs[currentTabIndex];
+		let currentTabName = tabs[currentTabIndex]["title"];
 		if (currentTabName === "Color") {
 			return <ColorTab {...colorTabProps} />;
 		} else if (currentTabName === "Size") {
