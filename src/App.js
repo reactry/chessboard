@@ -11,11 +11,13 @@ function App () {
 	const colors = settings.colors;
 	const resolutions = settings.resolutions;
 	const sizes = settings.sizes;
+	const radiuses = settings.radiuses;
 
 	let [selectSquare, setSelectSquare] = React.useState(true);
 	let [borderIndex, setBorderIndex] = React.useState(0);
 	let [widthIndex, setWidthIndex] = React.useState(8);
 	let [heightIndex, setHeightIndex] = React.useState(8);
+	let [radiusIndex, setRadiusIndex] = React.useState(8);
 
 	let [backgroundColorIndex, setBackgroundColorIndex] = React.useState(2);
 	let [primaryColorIndex, setPrimaryColorIndex] = React.useState(1);
@@ -28,6 +30,7 @@ function App () {
 		sizes,
 		widthIndex, setWidthIndex,
 		heightIndex, setHeightIndex,
+		radiuses, radiusIndex, setRadiusIndex,
 		resolutions, resolutionIndex, setResolutionIndex,
 		colors, backgroundColorIndex, setBackgroundColorIndex,
 		primaryColorIndex, setPrimaryColorIndex,
@@ -36,6 +39,7 @@ function App () {
 	let outputProps = {
 		borders, borderIndex,
 		sizes, widthIndex, heightIndex,
+		radiuses, radiusIndex,
 		resolutions, resolutionIndex,
 		colors, backgroundColorIndex, primaryColorIndex, secondaryColorIndex
 	};

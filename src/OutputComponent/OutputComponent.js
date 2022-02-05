@@ -5,6 +5,7 @@ import Row from './Row';
 export default function OutputComponent ({
 	borders, borderIndex,
 	sizes, widthIndex, heightIndex,
+	radiuses, radiusIndex,
 	resolutions, resolutionIndex,
 	colors, backgroundColorIndex, primaryColorIndex, secondaryColorIndex
 }) {

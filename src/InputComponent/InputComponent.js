@@ -17,6 +17,7 @@ export default function InputComponent ({
 	sizes,
 	widthIndex, setWidthIndex,
 	heightIndex, setHeightIndex,
+	radiuses, radiusIndex, setRadiusIndex,
 	resolutions, resolutionIndex, setResolutionIndex,
 	colors, backgroundColorIndex, setBackgroundColorIndex,
 	primaryColorIndex, setPrimaryColorIndex,
