@@ -1,9 +1,9 @@
-import NumberPicker from './NumberPicker';
 import ShowToggle from './ShowToggle';
 import DebugTable from './DebugTable';
 
 import TopTabBar from './TopTabBar';
 import ColorTab from './ColorTab';
+import SizeTab from './SizeTab';
 
 import React from 'react';
 import domtoimage from 'dom-to-image';
@@ -26,12 +26,6 @@ export default function InputComponent ({
 }) {
 
 	let [currentTabIndex, setCurrentTabIndex] = React.useState(0);
-
-	let sizeIndex = widthIndex;
-	let setSizeIndex = (x) => {
-		setWidthIndex(x);
-		setHeightIndex(x);
-	};
 	let [showDebugTable, setShowDebugTable] = React.useState(true);
 
 	let resolution = resolutions[resolutionIndex];
@@ -59,12 +53,6 @@ export default function InputComponent ({
 		tabs, currentTabIndex, setCurrentTabIndex
 	};
 
-	let selectShapeProps = {
-		show: selectSquare,
-		setShow: setSelectSquare,
-		title: "Square"
-	};
-
 	let debugTableToggleProps = {
 		show: showDebugTable,
 		setShow: setShowDebugTable,
@@ -82,36 +70,19 @@ export default function InputComponent ({
 		secondaryColorIndex
 	};
 
-	function shapeSelector () {
-		if (selectSquare) {
-			return (
-				<div>
-					<NumberPicker title="Square Width"
-						numbers={sizes}
-						index={sizeIndex}
-						setIndex={setSizeIndex} />
-				</div>
-			);
-		} else {
-			return (
-				<div>
-					<NumberPicker title="Rectangle Width"
-						numbers={sizes}
-						index={widthIndex}
-						setIndex={setWidthIndex} />
-					<NumberPicker title="Rectangle Height"
-						numbers={sizes}
-						index={heightIndex}
-						setIndex={setHeightIndex} />
-				</div>
-			);
-		}
-	}
-
 	let colorTabProps = {
 		colors, backgroundColorIndex, setBackgroundColorIndex,
 		primaryColorIndex, setPrimaryColorIndex,
 		secondaryColorIndex, setSecondaryColorIndex
+	};
+
+	let sizeTabProps = {
+		selectSquare, setSelectSquare,
+		borders, borderIndex, setBorderIndex,
+		sizes,
+		widthIndex, setWidthIndex,
+		heightIndex, setHeightIndex,
+		resolutions, resolutionIndex, setResolutionIndex
 	};
 
 	return (
@@ -127,13 +98,7 @@ export default function InputComponent ({
 			</div>
 			<div className="p-4">
 				<ColorTab {...colorTabProps} />
-
-				<ShowToggle {...selectShapeProps} />
-				{shapeSelector()}
-				<NumberPicker title="Border size"
-					numbers={borders}
-					index={borderIndex}
-					setIndex={setBorderIndex} />
+				<SizeTab {...sizeTabProps} />
 
 				<div className="py-4">
 					<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={downloadPng}>Download</button>
