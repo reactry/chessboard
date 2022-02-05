@@ -6,7 +6,7 @@ export default function TopTabBar ({
 }) {
 
 	let tabItems = tabs.map((v, i) => {
-		let tabClass = "px-6 py-3 text-sm font-bold duration-300 cursor-pointer";
+		let tabClass = "grow px-2 py-3 duration-300 cursor-pointer";
 		tabClass += (i === currentTabIndex) ? " bg-purple-200" : " hover:bg-purple-100";
 		return (
 			<div key={i} className={tabClass} onClick={() => setCurrentTabIndex(i)}>{v}</div>
@@ -15,7 +15,7 @@ export default function TopTabBar ({
 
 	return (
 		<div className="TopTabBar">
-			<div className="flex bg-slate-400">
+			<div className="flex text-center text-sm font-bold bg-slate-400">
 				{tabItems}
 			</div>
 		</div>
