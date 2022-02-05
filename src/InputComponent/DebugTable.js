@@ -10,7 +10,7 @@ export default function DebugTable (props) {
 					<code className="bg-slate-100 px-2 py-1">{v}</code>
 				</div>
 				<div className="w-16">
-					<code className="bg-slate-100 px-2 py-1 font-bold">{props[v]}</code>
+					<code className="bg-slate-100 px-2 py-1 font-bold">{String(props[v])}</code>
 				</div>
 			</div>
 		);
