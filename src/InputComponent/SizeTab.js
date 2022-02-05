@@ -22,10 +22,12 @@ export default function SizeTab ({
 	let width = resolution.width;
 	let height = resolution.height;
 	let resolutionItems = resolutions.map((v, i) => {
-		let borderClass = (i === resolutionIndex) ? "border-y-4 border-red-500" : "border-y-4";
-		let classNames = `px-3 py-1 mr-1 cursor-pointer bg-slate-600 ${borderClass}`;
+		let borderClass = (i === resolutionIndex) ? "bg-slate-800 text-white" : "text-black cursor-pointer";
+		let classNames = `px-3 py-1 text-sm border-2 border-slate-800 duration-300 ${borderClass}`;
 		return (
-			<div className={classNames} key={i} onClick={(e) => setResolutionIndex(i)}>{v.name}</div>
+			<div>
+				<div className={classNames} key={i} onClick={(e) => setResolutionIndex(i)}>{v.name}</div>
+			</div>
 		);
 	});
 
@@ -63,12 +65,16 @@ export default function SizeTab ({
 
 	return (
 		<div className="SizeTab">
-			<div className="flex px-4 py-2 text-white font-bold text-sm">
-				{resolutionItems}
-				<div className="px-4 py-2 ml-4 bg-rose-500 inline-block rounded-full">
-					<span>{width}</span>
-					<span className="px-1">x</span>
-					<span>{height}</span>
+			<div className="flex px-4 text-white font-bold text-sm">
+				<div className="flex py-1">
+					{resolutionItems}
+				</div>
+				<div>
+					<div className="px-4 pt-3 pb-2 text-md font-bold ml-4 bg-rose-500 inline-block rounded-md">
+						<span>{width}</span>
+						<span className="px-1">x</span>
+						<span>{height}</span>
+					</div>
 				</div>
 			</div>
 			<div className="px-4">
