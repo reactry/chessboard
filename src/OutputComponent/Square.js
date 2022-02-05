@@ -2,7 +2,7 @@
 
 
 export default function Square ({
-	width, height, bg
+	width, height, bg, radius
 }) {
 
 	let style = {
@@ -10,7 +10,8 @@ export default function Square ({
 		height: height + "px"
 	};
 
+	let squareClass = bg + " " + radius;
 	return (
-		<div className={bg} style={style}></div>
+		<div className={squareClass} style={style}></div>
 	);
 }

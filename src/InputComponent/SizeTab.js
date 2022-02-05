@@ -1,4 +1,5 @@
 import NumberPicker from './NumberPicker';
+import ClassPicker from './ClassPicker';
 import ShowToggle from './ShowToggle';
 
 
@@ -9,7 +10,8 @@ export default function SizeTab ({
 	sizes,
 	widthIndex, setWidthIndex,
 	heightIndex, setHeightIndex,
-	resolutions, resolutionIndex, setResolutionIndex,
+	radiuses, radiusIndex, setRadiusIndex,
+	resolutions, resolutionIndex, setResolutionIndex
 }) {
 
 	let sizeIndex = widthIndex;
@@ -35,6 +37,13 @@ export default function SizeTab ({
 		show: selectSquare,
 		setShow: setSelectSquare,
 		title: "Square"
+	};
+
+	let radiusPickerProps = {
+		classes: radiuses,
+		title: "Radius",
+		index: radiusIndex,
+		setIndex: setRadiusIndex
 	};
 
 	function shapeSelector () {
@@ -85,6 +94,7 @@ export default function SizeTab ({
 				numbers={borders}
 				index={borderIndex}
 				setIndex={setBorderIndex} />
+			<ClassPicker {...radiusPickerProps} />
 		</div>
 	);
 }

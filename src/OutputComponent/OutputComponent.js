@@ -29,7 +29,7 @@ export default function OutputComponent ({
 
 	let arr = [...Array(ny).keys()].map(i => i+1);
 	let rowItems = arr.map((v, rowIndex) => {
-		let args = {rowIndex, nx, size_x, size_y, primaryColor, secondaryColor};
+		let args = {rowIndex, nx, size_x, size_y, primaryColor, secondaryColor, radiuses, radiusIndex};
 		return <Row key={rowIndex} {...args} />;
 	});
 

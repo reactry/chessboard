@@ -17,7 +17,7 @@ function App () {
 	let [borderIndex, setBorderIndex] = React.useState(0);
 	let [widthIndex, setWidthIndex] = React.useState(8);
 	let [heightIndex, setHeightIndex] = React.useState(8);
-	let [radiusIndex, setRadiusIndex] = React.useState(8);
+	let [radiusIndex, setRadiusIndex] = React.useState(0);
 
 	let [backgroundColorIndex, setBackgroundColorIndex] = React.useState(2);
 	let [primaryColorIndex, setPrimaryColorIndex] = React.useState(1);

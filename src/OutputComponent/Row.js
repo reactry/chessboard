@@ -2,7 +2,9 @@ import Square from './Square';
 
 
 export default function Row ({
-	rowIndex, nx, size_x, size_y, primaryColor, secondaryColor
+	rowIndex, nx, size_x, size_y,
+	primaryColor, secondaryColor,
+	radiuses, radiusIndex
 }) {
 
 	let arr = [...Array(nx).keys()].map(i => i+1);
@@ -13,7 +15,8 @@ export default function Row ({
 		let args = {
 			width: size_x,
 			height: size_y,
-			bg: bg
+			bg: bg,
+			radius: radiuses[radiusIndex].class
 		};
 		return <Square key={squareIndex} {...args} />;
 	});
