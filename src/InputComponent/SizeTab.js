@@ -39,7 +39,7 @@ export default function SizeTab ({
 		if (selectSquare) {
 			return (
 				<div>
-					<NumberPicker title="Square Width"
+					<NumberPicker title="Width"
 						numbers={sizes}
 						index={sizeIndex}
 						setIndex={setSizeIndex} />
@@ -48,11 +48,11 @@ export default function SizeTab ({
 		} else {
 			return (
 				<div>
-					<NumberPicker title="Rectangle Width"
+					<NumberPicker title="Width"
 						numbers={sizes}
 						index={widthIndex}
 						setIndex={setWidthIndex} />
-					<NumberPicker title="Rectangle Height"
+					<NumberPicker title="Height"
 						numbers={sizes}
 						index={heightIndex}
 						setIndex={setHeightIndex} />
@@ -75,7 +75,7 @@ export default function SizeTab ({
 				<ShowToggle {...selectShapeProps} />
 			</div>
 			{shapeSelector()}
-			<NumberPicker title="Border size"
+			<NumberPicker title="Border"
 				numbers={borders}
 				index={borderIndex}
 				setIndex={setBorderIndex} />
