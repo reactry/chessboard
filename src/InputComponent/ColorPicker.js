@@ -19,7 +19,7 @@ export default function ColorPicker ({
 		setIndex(Math.floor(Math.random() * maxColors));
 	}
 
-	let randomizeButton = <span className="text-sm px-2 py-1 ml-2 bg-slate-400 cursor-pointer duration-300 hover:bg-slate-600 hover:text-white" onClick={pickRandomColor}>random</span>;
+	let randomizeButton = <span className="text-xs px-2 py-1 ml-2 bg-slate-300 cursor-pointer duration-300 hover:bg-slate-600 hover:text-white" onClick={pickRandomColor}>random</span>;
 
 	function handleKeyDown (e) {
 		let keyCode = e.keyCode;
@@ -38,12 +38,12 @@ export default function ColorPicker ({
 	}
 
 	return (
-		<div className="ColorPicker mb-6">
-			<h2 className="font-bold mb-1">
+		<div className="ColorPicker mb-6 px-4 py-2 outline-none focus:bg-slate-400" tabIndex="0" onKeyDown={handleKeyDown}>
+			<h2 className="font-bold mb-2">
 				<span className="text-sm">{title}</span>
 				{randomizeButton}
 			</h2>
-			<div className="flex outline-none p-1 border-2 focus:bg-slate-400" tabIndex="0" onKeyDown={handleKeyDown}>
+			<div className="flex">
 				{colorItems}
 			</div>
 		</div>

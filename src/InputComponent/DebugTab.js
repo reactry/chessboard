@@ -29,7 +29,7 @@ export default function DebugTab ({
 	};
 
 	return (
-		<div className="DebugTab">
+		<div className="DebugTab px-4">
 			<ShowToggle {...debugTableToggleProps} />
 			{showDebugTable && <DebugTable {...debugTableProps} />}
 		</div>

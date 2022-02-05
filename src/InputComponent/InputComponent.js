@@ -78,10 +78,10 @@ export default function InputComponent ({
 		<div className="InputComponent">
 			<TopTabBar {...topTabBarProps} />
 
-			<div className="p-4">
+			<div className="py-4">
 				{currentTab()}
 
-				<div className="py-4">
+				<div className="px-4 py-4">
 					<button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" onClick={downloadPng}>Download</button>
 				</div>
 			</div>

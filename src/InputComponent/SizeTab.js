@@ -63,7 +63,7 @@ export default function SizeTab ({
 
 	return (
 		<div className="SizeTab">
-			<div className="flex py-2 text-white font-bold text-sm">
+			<div className="flex px-4 py-2 text-white font-bold text-sm">
 				{resolutionItems}
 				<div className="px-4 py-2 ml-4 bg-rose-500 inline-block rounded-full">
 					<span>{width}</span>
@@ -71,7 +71,9 @@ export default function SizeTab ({
 					<span>{height}</span>
 				</div>
 			</div>
-			<ShowToggle {...selectShapeProps} />
+			<div className="px-4">
+				<ShowToggle {...selectShapeProps} />
+			</div>
 			{shapeSelector()}
 			<NumberPicker title="Border size"
 				numbers={borders}
